@@ -1,0 +1,64 @@
+p::before {
+  content: "hello ";
+  font-weight: bold;
+  font-size: 2em;
+  color: red;
+  display: block;
+  background: black;
+}
+p::after {
+  /* content required */
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: green;
+}
+div {
+  margin: 0x;
+  padding: 0px;
+  width: 50vw;
+  margin: 100px auto;
+  border: 2px solid red;
+  position: relative;
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+img::before {
+  content: "hello";
+}
+
+div::before {
+  content: "";
+  background: grey;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  top: -20px;
+  left: -20px;
+  z-index: -1;
+  transition: all 0.05s linear;
+}
+
+div::after {
+  content: "";
+  border: 2px solid red;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  top: -40px;
+  left: -40px;
+  z-index: -2;
+  transition: all 0.05s linear;
+}
+
+div:hover::after,
+div:hover::before {
+  top: 0;
+  left: 0;
+}
